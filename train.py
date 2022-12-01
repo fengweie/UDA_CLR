@@ -272,65 +272,6 @@ def main():
             batch_size=args.batch_size,
             warmup_epoch=args.warmup_epoch,
         )
-    elif args.method == 'baseline_wob':
-        trainer = Trainer_baseline_wob.Trainer(
-            cuda=cuda,
-            model_gen=model_gen,
-            optimizer_gen=optim_gen,
-            lr_gen=args.lr_gen,
-            lr_decrease_rate=args.lr_decrease_rate,
-            val_loader=domain_loader_val,
-            domain_loaderS=domain_loaderS,
-            domain_loaderT=domain_loaderT,
-            out=args.out,
-            max_epoch=args.max_epoch,
-            stop_epoch=args.stop_epoch,
-            interval_validate=args.interval_validate,
-            batch_size=args.batch_size,
-            warmup_epoch=args.warmup_epoch,
-        )
-    elif args.method == 'beal':
-        trainer = Trainer_beal.Trainer(
-            cuda=cuda,
-            model_gen=model_gen,
-            model_dis=model_dis,
-            model_uncertainty_dis=model_dis2,
-            optimizer_gen=optim_gen,
-            optimizer_dis=optim_dis,
-            optimizer_uncertainty_dis=optim_dis2,
-            lr_gen=args.lr_gen,
-            lr_dis=args.lr_dis,
-            lr_decrease_rate=args.lr_decrease_rate,
-            val_loader=domain_loader_val,
-            domain_loaderS=domain_loaderS,
-            domain_loaderT=domain_loaderT,
-            out=args.out,
-            max_epoch=args.max_epoch,
-            stop_epoch=args.stop_epoch,
-            interval_validate=args.interval_validate,
-            batch_size=args.batch_size,
-            warmup_epoch=args.warmup_epoch,
-        )
-    elif args.method == 'posal':
-        trainer = Trainer_posal.Trainer(
-            cuda=cuda,
-            model_gen=model_gen,
-            model_dis=model_dis,
-            optimizer_gen=optim_gen,
-            optimizer_dis=optim_dis,
-            lr_gen=args.lr_gen,
-            lr_dis=args.lr_dis,
-            lr_decrease_rate=args.lr_decrease_rate,
-            val_loader=domain_loader_val,
-            domain_loaderS=domain_loaderS,
-            domain_loaderT=domain_loaderT,
-            out=args.out,
-            max_epoch=args.max_epoch,
-            stop_epoch=args.stop_epoch,
-            interval_validate=args.interval_validate,
-            batch_size=args.batch_size,
-            warmup_epoch=args.warmup_epoch,
-        )
     elif args.method == 'prototype_full':
         trainer = Trainer_prototype_full.Trainer(
             cuda=cuda,
